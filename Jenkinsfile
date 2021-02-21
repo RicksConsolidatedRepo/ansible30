@@ -2,7 +2,7 @@ pipeline {
 agent {
  label "master"
 }
-stage {
+stages {
     
     stage('Deploy the application'){
     steps{
