@@ -1,0 +1,15 @@
+- name: Install the Apache package
+  package:
+     name: apache2
+     state: present
+ 
+- name: Update the apache configuration
+  template:
+     src: ports.conf.j2
+     dest: /etc/apache2/ports.conf
+  notify:
+  - Restart apache service
+- name: Copy Web content
+  copy:
+    src: index.html
+    dest: /var/www/html/

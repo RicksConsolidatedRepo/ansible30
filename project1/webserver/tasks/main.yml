@@ -1,0 +1,7 @@
+---
+# tasks file for webserver
+- include: apache.yml
+  when: ansible_os_family == 'Debian'
+
+- include: httpd.yml
+  when: ansible_os_family == 'RedHat'
